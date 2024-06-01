@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Annanya Sah</title>
+  <meta name="description" content="Personal website of Annanya Sah for educational and career purpose.">
+  <meta name="robots" content="index,follow,archive">
+  <meta name="Keywords" content="Annanya Sah">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/5d3d2fa318.js" crossorigin="anonymous"></script>
+
+  <!-- CSS Style sheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="96x96" href="image/favicon/eye-favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Raleway:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@300;400&family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <section class="s_form">
+
+    <div class="c_heading">
+      <h1>Send me a message!</h1>
+      <h5><em>You can send me your feedback, wisdom or just that random thought in your mind.</em>😁</h5>
+    </div>
+
+    <div class="c_form">
+      <form action="https://formspree.io/f/xyybrpbb" method="POST" id="my-form">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+
+        <div class="form-group">
+          <label for="massage">Message</label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+    <div id="status"></div>
+
+  </section>
+
+  <script src="index.js"></script>
+
+
+</body>
