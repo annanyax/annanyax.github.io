@@ -9980,7 +9980,7 @@ a:hover .c-logo__iris {
   transform: translateZ(0)
 }
 
-.c-fab {
+.c-annabot-fab {
   background: #222;
   border-radius: 50%;
   border: 0;
@@ -10005,24 +10005,24 @@ a:hover .c-logo__iris {
 }
 
 @media (min-width:544px) {
-  .c-fab {
+  .c-annabot-fab {
     bottom: 40px;
     right: 40px
   }
 }
 
-.c-fab.hide {
+.c-annabot-fab.hide {
   z-index: -1;
   pointer-events: none;
   opacity: 0;
   transform: scale3d(.5, .5, .5)
 }
 
-.c-fab:hover {
+.c-annabot-fab:hover {
   background: #3c3c3c
 }
 
-.c-fab:active, .c-fab:focus {
+.c-annabot-fab:active, .c-annabot-fab:focus {
   outline: none
 }
 
