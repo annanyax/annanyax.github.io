@@ -1,77 +1,140 @@
+$(document).ready(function() {
+  console.log("Document is ready.");
 
+  var annabotInitialized = false; // Flag to check if Annabot is initialized
 
-const annabot = () => {
-  var $id = 0;
+  // Function to load annabot.html content
+  function loadAnnabotContent(callback) {
+      console.log("Loading annabot content...");
+      $("#js-annabot-container").load("annabot.html", function(response, status, xhr) {
+          if (status === "success") {
+              console.log("annabot.html loaded successfully.");
+              if (callback) callback();
+          } else {
+              console.error("Error loading annabot.html:", xhr.status, xhr.statusText);
+          }
+      });
+  }
 
-  $(".js-holder").click(function(e) {
-    e.preventDefault();
-    holder("open");
-    $(".js-holder").blur();
-    $("#c-annabot").addClass("hide");
-  });
+  // Initialize annabot interactions
+  function initAnnabot() {
+      console.log("Initializing Annabot interactions...");
+      var $id = 0;
 
-  $(".js-annabot").click(function(e) {
-    e.preventDefault();
-    holder("close");
-    $(".js-annabot").blur();
-    $("#c-annabot").removeClass("hide");
-    $(".c-fab").addClass("hide");
+      $(".js-annabot").off('click').on('click', function(e) {
+          e.preventDefault();
+          console.log("Annabot button clicked.");
+          $(".js-annabot").blur();
+          $("#c-annabot").removeClass("hide");
+          $(".c-annabot-fab").addClass("hide");
 
-    $("#c-new-content").empty();
-    $(".c-annabot__content .c-annabot__options").removeClass("hide").addClass("active");
-  });
-
-  $(".js-annabot-exit").click(function(e) {
-    e.preventDefault();
-    holder("close");
-    $(".js-annabot-exit").blur();
-    $("#c-annabot").addClass("hide");
-    $(".c-fab").removeClass("hide");
-
-    setTimeout(function () {
-      $("#c-new-content").empty();
-      $(".c-annabot__content .c-annabot__options").removeClass("hide").addClass("active");
-    }, 100 );
-
-  });
-
-  $(".c-annabot__button").click(function(e) {
-    var $this = $(this);
-    e.preventDefault();
-
-    // var $delimiter = "_";
-    // var $num = $this.attr("id").split($delimiter)[1];
-    var $data = $this.data("question");
-    var $answer = "#c-annabot-q .c-annabot__answer--" + $data;
-    var $updated = "c-annabot__answer--" + $id;
-    var $location = "#c-new-content";
-    var $buttons = ".c-annabot__options";
-
-    $this.closest($buttons).removeClass("active").addClass("hide");
-    $($answer).clone(true,true).addClass("active").attr('id', $updated).appendTo($location);
-
-    var $animationId = "#" + $updated + " > div";
-
-    $($animationId).each(function(index){
-        var $this = $(this);
-        setTimeout(function () {
-          $this.addClass("active");
-
-          var msgDiv = $("#c-annabot-content");
-          msgDiv.scrollTop = msgDiv.scrollHeight;
-
-          setTimeout(function () {
-            $(msgDiv).scrollTop($(msgDiv)[0].scrollHeight);
-          }, 10 );
-
-        }, index*1500);
+          $("#c-new-content").empty();
+          $(".c-annabot__content .c-annabot__options").removeClass("hide").addClass("active");
       });
 
-    $id++;
-    console.log($id);
+      $(".js-annabot-exit").off('click').on('click', function(e) {
+          e.preventDefault();
+          console.log("Annabot exit button clicked.");
+          $(".js-annabot-exit").blur();
+          $("#c-annabot").addClass("hide");
+          $(".c-annabot-fab").removeClass("hide");
 
+          setTimeout(function () {
+              $("#c-new-content").empty();
+              $(".c-annabot__content .c-annabot__options").removeClass("hide").addClass("active");
+          }, 100);
+      });
+
+      $(".c-annabot__button").off('click').on('click', function(e) {
+          var $this = $(this);
+          e.preventDefault();
+          console.log("Annabot option button clicked.");
+
+          var $data = $this.data("question");
+          var $answer = "#c-annabot-q .c-annabot__answer--" + $data;
+          var $updated = "c-annabot__answer--" + $id;
+          var $location = "#c-new-content";
+          var $buttons = ".c-annabot__options";
+
+          $this.closest($buttons).removeClass("active").addClass("hide");
+          $($answer).clone(true, true).addClass("active").attr('id', $updated).appendTo($location);
+
+          var $animationId = "#" + $updated + " > div";
+
+          $($animationId).each(function(index) {
+              var $this = $(this);
+              setTimeout(function () {
+                  $this.addClass("active");
+
+                  var msgDiv = $("#c-annabot-content");
+                  msgDiv.scrollTop = msgDiv.scrollHeight;
+
+                  setTimeout(function () {
+                      $(msgDiv).scrollTop($(msgDiv)[0].scrollHeight);
+                  }, 10);
+              }, index * 1500);
+          });
+
+          $id++;
+          console.log("Current id:", $id);
+      });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const annabot = document.getElementById('c-annabot');
+    const annabotContent = document.getElementById('c-annabot-content');
+    const newContent = document.getElementById('c-new-content');
+    const annabotQ = document.getElementById('c-annabot-q');
+  
+    // Function to attach click event listeners to buttons
+    function attachClickListeners() {
+      const buttons = document.querySelectorAll('.c-annabot__button');
+      buttons.forEach(button => {
+        button.addEventListener('click', function() {
+          const questionId = this.getAttribute('data-question');
+          const answerElement = document.querySelector(`.c-annabot__answer--${questionId}`);
+          if (answerElement) {
+            newContent.innerHTML = answerElement.innerHTML;
+            attachClickListeners(); // Reattach listeners to new buttons
+          }
+        });
+      });
+    }
+  
+    // Initial attachment of event listeners
+    attachClickListeners();
+  
+    // Example function to show the bot, you can modify this as needed
+    function showAnnabot() {
+      annabot.classList.remove('hide');
+    }
+  
+    // Attach event listener for showing the bot
+    const botButton = document.querySelector('.js-annabot-exit');
+    if (botButton) {
+      botButton.addEventListener('click', function() {
+        annabot.classList.add('hide');
+      });
+    }
+  });  
+
+  // Load the chatbot content and initialize the interactions when the button is clicked
+  $(".js-annabot").click(function() {
+      console.log("Chatbot button clicked.");
+      if (!annabotInitialized) {
+          annabotInitialized = true;
+          if ($("#js-annabot-container").is(':empty')) {
+              console.log("Annabot container is empty, loading content...");
+              loadAnnabotContent(initAnnabot);
+          } else {
+              console.log("Annabot container already loaded.");
+              initAnnabot();
+          }
+      }
   });
-}
+});
+
+//test code end 
 
 const lazyLoad = () => {
   var myLazyLoad = new LazyLoad();
@@ -352,26 +415,6 @@ const mosaic = () => {
 
 }
 
-// const eyeFollow = () => {
-
-//   $("html").mousemove(function(event) {
-//   var $eye = $(".c-logo__eye");
-//   var $x = ($eye.offset().left) + ($eye.width() / 2);
-//   var $y = ($eye.offset().top) + ($eye.height() / 2);
-//   var $rad = Math.atan2(event.pageX - $x, event.pageY - $y);
-//   var $rot = ($rad * (180 / Math.PI) * -1) + 180;
-//   $eye.css({
-//     '-webkit-transform': 'rotate(' + $rot + 'deg)',
-//     '-moz-transform': 'rotate(' + $rot + 'deg)',
-//     '-ms-transform': 'rotate(' + $rot + 'deg)',
-//     'transform': 'rotate(' + $rot + 'deg)'
-//   });
-// });
-
-// }
-
-
-
 const blobs = () => {
 
   anime({
@@ -411,14 +454,12 @@ $(document).ready(() => {
   lazyLoad();
   bouncing();
   workBounce();
-  // eyeFollow();
   headerEye();
   mosaic();
   workHover();
   aHover();
   wipLinks();
   blobs();
-  annabot();
 });
 
 // Moving cursor dot
@@ -442,9 +483,6 @@ $(document).ready(() => {
             y: posy
         }
     }
-
-
-
     // Custom mouse cursor.
     class CursorFx {
         constructor(el) {
@@ -568,7 +606,6 @@ var TxtType = function(el, toRotate, period) {
         css.innerHTML = ".typewrite > .pulse { border-right: 2px solid grey}";
         document.body.appendChild(css);
     };
-
 
 
     // Send a Message
