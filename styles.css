@@ -7207,19 +7207,10 @@ a:hover .c-logo__iris {
   }
 }
 
-.c-info__avatar {
+/* .c-info__avatar {
   max-width: 100%;
   overflow: hidden;
   border-radius: 300px;
-  box-shadow: 0 52px 74px rgba(0, 21, 64, .138559);
-  max-width: 400px;
-  margin: 0 auto 4em
-}
-
-.c-info__blog-img {
-  max-width: 100%;
-  overflow: hidden;
-  border-radius: 20px;
   box-shadow: 0 52px 74px rgba(0, 21, 64, .138559);
   max-width: 400px;
   margin: 0 auto 4em
@@ -7231,17 +7222,62 @@ a:hover .c-logo__iris {
   }
 }
 
+.c-info__avatar {
+  display: block;
+  width: 150%;
+  height: auto
+} */
+
+
+/* Default styles for all devices */
+.c-info__avatar {
+  display: block;
+  /* width: 150%; */
+  /* height: 400px;  */
+  max-width: 400px;
+  overflow: hidden;
+  border-radius: 300px;  /* Circular avatar with 50% value */
+  margin: 0 auto 4em;
+  box-shadow: 0 52px 74px rgba(0, 21, 64, 0.138559); /* Corrected opacity value */
+}
+
+/* Media queries for phone and tablet adjustments */
+@media (max-width: 767px) {  /* Adjust breakpoint as needed */
+  .c-info__avatar {
+    max-width: 100%;  /* Set max-width for smaller screens */
+    border-radius: 300px;  /* Circular avatar with 50% value */
+    height: 350px;
+  }
+}
+
+/* Styles for screens wider than 1200px (optional) */
+@media (min-width: 1200px) {
+  .c-info__avatar {
+    margin: 0 auto;  /* Override default margin for larger screens */
+    /* height: 350px; */
+  }
+}
+
+
+
+.c-info__blog-img {
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 52px 74px rgba(0, 21, 64, .138559);
+  max-width: 400px;
+  margin: 0 auto 4em
+}
+
+
+
+
 @media (min-width:1200px) {
   .c-info__blog-img {
     margin: 0 auto
   }
 }
 
-.c-info__avatar {
-  display: block;
-  width: 150%;
-  height: auto
-}
 
 .c-info__blog-img img {
   display: block;
@@ -7564,7 +7600,8 @@ a:hover .c-logo__iris {
   position: relative;
   display: block;
   transition: all .4s ease-in-out;
-  padding: 3em 3em 4em;
+  /* padding: 3em 3em 4em; */
+  padding: 2em 0 4em;
   margin-top: 0;
 }
 
