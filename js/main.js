@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { sender: 'user', message: "I'd like to send you a message" },
             { sender: 'bot', message: "Oh, yay! 💃" },
             // { sender: 'bot', message: 'Send me a message <a href="message.html" target="_blank" rel="noreferrer noopener"><span>here</span></a>' },
-            { sender: 'bot', message: 'You can also reach me out on <a href="mailto:email@annanyasah7@gmail.com" rel="noreferrer noopener"><span>email</span></a>' }
+            { sender: 'bot', message: 'You can also reach me out on <a href="mailto:email@email@annanyasah.com" rel="noreferrer noopener"><span>email</span></a>' }
         ]
     };
 
