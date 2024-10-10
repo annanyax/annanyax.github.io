@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Archive Page</title>
+
+</head>
+<body>
+    <header class="fixed-nav">
+        <nav class="nav-container">
+            <!-- Icon on the left -->
+            <div class="nav-left">
+                <a href="index.html"><img src="images/anime-icon-zoomed.png" alt="Your Icon" class="nav-icon-image"></a>
+            </div>
+
+            <!-- CV button on the right -->
+            <div class="nav-right">
+                <a href="CV/FullCV EN.pdf" class="CV-button">Curriculum Vitae</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Archive Section -->
+    <section id="archive" class="archive-section">
+        <div class="archive-header">
+            <h1>Archive</h1>
+            <p>List of projects I have worked over the years.</p>
+        </div>
+
+        <div class="social-icons">
+            <ul>
+                <li><a href="https://github.com/annanyax"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://hashnode.com/@annanyasah"><i class="fa-solid fa-hashtag"></i></a></li>   
+                <li><a href="https://twitter.com/annanyasah_"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="www.linkedin.com/in/annanyasah"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="archive-content">
+            <div class="archive-table">
+                <div class="archive-table-row archive-table-header">
+                    <div class="year">Year</div>
+                    <div class="title">Title</div>
+                    <div class="company">Made at</div>
+                    <div class="technologies">Built with</div>
+                    <div class="links">Link</div>
+                </div>
+                <div id="projects-list"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="fixed-email">
+        <p>annanyasah7@gmail.com</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="js/archive.js"></script>
+</body>
+</html>

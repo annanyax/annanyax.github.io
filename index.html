@@ -1,168 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annanya Sah CV</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
 
-  <title>Annanya Sah</title>
-  <meta name="description" content="Personal website of Annanya Sah for educational and career purpose.">
-  <meta name="robots" content="index,follow,archive">
-  <meta name="Keywords" content="Annanya Sah">
-  <!--Pinterest link-->
-  <meta name="p:domain_verify" content="ba738fca62d462cde07b14ab309abbc7" />
-
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/5d3d2fa318.js" crossorigin="anonymous"></script>
-
-  <!-- CSS Style sheet -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="96x96" href="image/favicon/annanya-favicon.png">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Raleway:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@300;400&family=Roboto:wght@400;500;900&display=swap"
-    rel="stylesheet">
-
+    <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="96x96" href="images/anime-favicon.png">
 </head>
-
-<body class="s-home">
-
-  <div class="cursor">
-    <div class="cursor__inner cursor__inner--circle"></div>
-    <div class="cursor__inner cursor__inner--dot"></div>
-  </div>
-
-  <header class="s-nav">
-
-    <nav class="c-nav">
-
-      <ul class="c-nav-list o-flexy o-flexy--top">
-
-        <li class="c-nav-list__item o-flexy__item c-nav-list__item--work js-work">
-          <a class="c-nav-list__link c-nav-list__link--work " href="index.html">
-            <span>Home</span>
-          </a>
-        </li>
-
-        <li class="c-nav-list__item o-flexy__item c-nav-list__item--wip">
-          <a class="c-nav-list__link c-nav-list__link--wip " href="blog.html">
-            <span>Weblog</span>
-          </a>
-        </li>
-    </nav>
-
-  </header>
-
-  <section class="c-hero">
-
-    <div class="c-tile c-tile--hs" aria-label="About-Annanya">
-
-      <div class="c-tile__holder">
-        <div class="o-flexy__block js-bounce-in-home">
-
-          <div class="c-info__hero">
-            <div class="c-info__hero-col js-bounce-in-home">
-              <div class="c-info__avatar">
-                <picture>
-                  <source type="image/png" data-srcset="image/june-avatar.png" role="presentation">
-                  <img class="lazy" data-src="/images/info/me-alt@2x.png" alt="Photo of Annanya Sah"
-                    style="height: 400px" />
-                </picture>
-              </div>
-
-            </div>
-
-
-            <div class="c-info__hero">
-              <div class="c-info__hero-col js-bounce-in-home">
-                <h1 class="c-hero__title"><span class="u-d-block@md">Hello. </span><span class="u-d-block@md">I am
-                    Annanya.</span></h1>
-                <h2 class="h2-space"><span>Learning to improve as a developer, one step at a time.</span>
-                </h2>
-                <h3><span><em><a href="resume.html"
-                  class="c-footer__link">Web-resume</a> here because it's easier to modify. </em>😏</span></h3>
-
-                <ul class="icon-list">
-                  <li class="c-nav-list__item o-flexy__item">
-                    <a class="c-nav-list__link external" href="https://github.com/annanyax?tab=repositories"
-                      target="_blank" rel="noopener" aria-label="Github">
-                      <img src="image/github24.png" alt="Github">
-                    </a>
-                  </li>
-                  <li class="c-nav-list__item o-flexy__item">
-                    <a class="c-nav-list__link external" href="https://twitter.com/annanyasah_" target="_blank"
-                      rel="noopener" aria-label="Twitter">
-                      <img src="image/twitter24.png" alt="X.com">
-                    </a>
-                  </li>
-                  <li class="c-nav-list__item o-flexy__item">
-                    <a class="c-nav-list__link external" href="https://www.linkedin.com/in/annanyasah/" target="_blank"
-                      rel="noopener" aria-label="LinkedIn">
-                      <img src="image/linkedin24.png" alt="LinkedIn">
-                    </a>
-                  </li>
-                </ul>
-
-              </div>
-
-            </div>
-
-          </div>
-
-  </section>
-
-  <footer class="c-footer">
-    <div class="c-footer__content">
-      <h3 class="c-footer__title">
-        Need a website?
-      </h3>
-      <p class="c-footer__text">
-        I occasionally take on freelance opportunities, if available. <span class="u-d-block@md">To know more, send me
-          over a message <a href="#" class="c-footer__link js-annabot"><span>here</span></a>.</span>
-      </p>
-
+<body>
+    <!-- Add this just after the <body> tag or wherever appropriate -->
+<div id="chat-container" class="chat-container">
+    <div class="chat-header">
+        <span>ANNA</span>
+        <button id="close-chat" class="close-chat">X</button>
     </div>
-  </footer>
+    <div id="chat-content" class="chat-content">
+        <!-- Chat messages will be appended here dynamically -->
+    </div>
+    <div class="chat-input-container">
+        <input type="text" id="chat-input" placeholder="Type a message...">
+        <button id="send-message" class="send-message">Send</button>
+    </div>
+</div>
 
-  <button class="c-annabot-fab js-annabot" aria-label="Toggle Chat">
-    <img src="image/chat-white.png" alt="Chat icon">
-  </button>
 
-  <div id="js-annabot-container" class="js-annabot-container"></div>
+    <header class="fixed-nav">
+        <nav class="nav-container">
+            <!-- Icon on the left -->
+            <div class="nav-left">
+                <a href="#"><img src="images/anime-icon-zoomed.png" alt="Your Icon" class="nav-icon-image"></a>
+                
+            </div>
+    
+            <!-- CV button on the right -->
+            <div class="nav-right">
+                <a href="CV/FullCV EN.pdf" class="CV-button">Curriculum Vitae</a>
+                <!-- <button id="theme-toggle" class="theme-toggle-button">🌞</button> -->
+            </div>
+        </nav>
+    </header>
 
 
-  <script type="text/javascript">
-    ! function (e, t, n) {
-      function a() {
-        var e = t.getElementsByTagName("script")[0],
-          n = t.createElement("script");
-        n.type = "text/javascript", n.async = !0, n.src = "", e.parentNode.insertBefore(n, e)
-      }
-      if (e.holder = n = function (t, n, a) {
-        e.holder.readyQueue.push({
-          method: t,
-          options: n,
-          data: a
-        })
-      }, n.readyQueue = [], "complete" === t.readyState) return a();
-      e.attachEvent ? e.attachEvent("onload", a) : e.addEventListener("load", a, !1)
-    }(window, document, window.holder || function () { });
-  </script>
-  <script type="text/javascript">
-    window.holder('init', '792436eb-bdd6-49a7-bea3-d1d27458d3f3')
-  </script>
+    
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.2/dist/lazyload.min.js"></script>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-intro">Hi, my name is</p>
+                <h1 class="hero-name">Annanya Sah.</h1>
+                <h2 class="hero-tagline">Welcome to my life of web.</h2>
+                <p class="hero-description">
+                    I’m a software engineer specializing Web development and Data engineering.
+                    Currently, I’m focused on building some notable projects on my <a href="https://github.com/annanyax">Github</a>.
+                </p>
+                <a href="blog.html" class="hero-cta-button">Read my Weblogs!</a>
+            </div>
+        </div>
+        <div class="social-icons">
+            <ul>
+                <li><a href="https://github.com/annanyax"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://hashnode.com/@annanyasah"><i class="fa-solid fa-hashtag"></i></a></li>   
+                <li><a href="https://twitter.com/annanyasah_"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="www.linkedin.com/in/annanyasah"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </section>
 
-  <script src="index.js"></script>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h3 class="about-title"><span class="section-number">01.</span> About Me</h3>
+        <div class="about-content">
+            <div class="about-text">
+                <p>What I love most about development is the initial brainstorming phase. It's where creativity thrives, and the raw power of imagination always inspires me.</p>
+                <p>I'm especially interested in <strong>full-stack development</strong> because it offers a complete view of the product lifecycle. This satisfies my curiosity and drives me to explore beyond my role. Even when I'm not working directly on full-stack tasks, I actively collaborate with different teams to learn about the broader product and process.</p>
+                <p>Looking ahead, I am also deeply interested in bridging my technical expertise with business strategy. I believe understanding both is key to fostering meaningful growth.</p>
+                <p>Over the years, I've worked with a variety of technologies and continuously added to my skillset. Recently, I've engaged with include:</p>
+                    <li>Python</li>
+                    <li>.NET Framework</li>
+                    <li>Frontend Technologies</li>
+                    <li>SSMS & SQL</li>
+                    <li>NoSQL Databases</li>
+                    <li>WordPress</li>
+                </ul>
+            </div>
+            <div class="about-photo">
+                <img src="images/anya.jpg" alt="Annanya's Photo">
+            </div>
+        </div>
+    </section>
 
+    <!-- Experience Section -->
+
+    <!-- Experience Section -->
+<section id="experience" class="experience-section">
+    <h3 class="experience-title"><span class="section-number">02.</span> Work & Education timeline</h3>
+    <div class="experience-content">
+        <div class="company-list">
+            <button class="company-tab active" data-company="unipd">UNIPD</button>
+            <button class="company-tab" data-company="outlink">Outlink</button>
+            <button class="company-tab" data-company="zycus">Zycus</button>
+            <button class="company-tab" data-company="tcet">TCET</button>
+            <button class="company-tab" data-company="other">Other</button>
+        </div>
+
+        <div class="job-details" id="job-details-container">
+            <div class="job-detail" data-company="unipd">
+                <h4>MSc Student <span class="company">UNIPD</span></h4>
+                <p class="job-duration">May 2022 - Present</p>
+                <ul class="job-description">
+                    <li><em>MSc in Computer Engineering specializing in Web Development and Data Engineering.</em></li>
+                    <li>Collaborated on multiple team projects, enhancing my technical and teamwork skills.</li>
+                    <li>Ongoing thesis focused on API development, with practical experience gained during an internship at Outlink Sas.</li>
+                    <li>Developed advanced skills in web and data engineering through applied coursework and projects.</li>
+                </ul>
+            </div>
+            <div class="job-detail" data-company="outlink" style="display: none;">
+                <h4>Intern <span class="company">Outlink</span></h4>
+                <p class="job-duration">October 2023 - March 2024</p>
+                <ul class="job-description">
+                    <li>First corporate experience in Italy, working within a 95% Italian-speaking environment, enhancing both technical and linguistic skills.</li>
+                    <li>Led ERP and WMS integration projects, collaborating with a project manager and other intra-company teams.</li>
+                    <li>Played a significant role in improving system efficiency, contributing to a 20% reduction in manual processing.</li>
+                    <p><i>(Note: A break was taken after this role due to health reasons.)</i></p>
+                </ul>
+            </div>
+            <div class="job-detail" data-company="zycus" style="display: none;">
+                <h4>Product technical analyst <span class="company">Zycus</span></h4>
+                <p class="job-duration">December 2019 - July 2021</p>
+                <ul class="job-description">
+                    <li>First full-time position, providing exposure to company development and direct client interactions.</li>
+                    <li>Involved in requirement gathering, testing, client meetings, and automation development.</li>
+                    <li>Contributed to an automation solution that improved task efficiency by 30%.</li>
+                    <li>Adapted to remote work during the pandemic, learning effective team collaboration in a virtual environment.</li>
+                </ul>
+            </div>
+            <div class="job-detail" data-company="tcet" style="display: none;">
+                <h4>BE Student <span class="company">TCET</span></h4>
+                <p class="job-duration">Jan 2022 - Apr 2022</p>
+                <ul class="job-description">
+                    <li><em>Bachelor of Computer Engineering, Mumbai University</em></li>
+                    <li>Gained foundational technical skills through team projects, coding competitions, and technical hackathons.</li>
+                    <li>Developed and presented a thesis on "Smart Dustbin"—a software and hardware integration project, which received a grant for implementation.</li>
+                </ul>
+            </div>
+            <div class="job-detail" data-company="other" style="display: none;">
+                <h4>Before<span class="company">Other</span></h4>
+                <p class="job-duration">Before - November 2019</p>
+                <ul class="job-description">
+                    <li>Participated in startup building projects and collaborated on internships with both internal and external professors.</li>
+                    <li>Obtained a Diploma in Computer Engineering from an MSBTE-affiliated institution.</li>
+                    <li>Worked as an ICT Help Desk Agent at Haptik, focusing on advanced search engine operations to assist clients with computational tasks.</li>
+                </ul>
+            </div>
+            <!-- Add other company job details similarly -->
+        </div>
+    </div>
+</section>
+
+    <!-- Projects Section -->
+<section id="noteworthy" class="noteworthy-section">
+    <h3 class="noteworthy-title"><span class="section-number">03.</span> Some Projects</h3>
+    <div class="noteworthy-content">
+        <!-- Project Cards -->
+        <div class="project-card">
+            <div class="project-header">
+                <i class="fas fa-folder"></i>
+                <div class="project-links">
+                    <a href="https://github.com/annanyax/chat-bot" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <h4 class="project-title">chat-bot</h4>
+            <p class="project-description">A terminal-style interface for interacting with a Python-based chatbot, using a knowledge base to answer questions. Extendable and open to user contributions.</p>
+            <p class="project-technologies">ML &nbsp;&bull;&nbsp; Python &nbsp;&bull;&nbsp; Json</p>
+        </div>
+        <!-- Add more project cards as needed -->
+        <!-- Example Card -->
+        <div class="project-card">
+            <div class="project-header">
+                <i class="fas fa-folder"></i>
+                <div class="project-links">
+                    <a href="https://github.com/annanyax/annanyax.github.io" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.annanyasah.com/index.html" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <h4 class="project-title">Personal website</h4>
+            <p class="project-description">A web-based platform showcasing a web-CV and web-blog, designed to highlight skills, projects, and share insights.</p>
+            <p class="project-technologies">Css &nbsp;&bull;&nbsp; Js &nbsp;&bull;&nbsp; HTML</p>
+        </div>
+        <!-- Add more cards as per the provided list -->
+    </div>
+    <div class="view-archive">
+        <a href="archive.html" target="_blank">View the Archive</a>
+    </div>
+</section>
+
+    <!-- Get In Touch Section -->
+<section id="contact" class="contact-section">
+    <h3 class="contact-title"><span class="section-number"></span> What's Next?</h3>
+    <h2 class="contact-heading">Let’s Collaborate</h2>
+    <p class="contact-description">
+        
+    </p>
+    <a href="mailto:annanyasah7@gmail.com" class="contact-cta-button">Say Hello</a>
+</section>
+
+    <div class="fixed-email">
+        <p>annanyasah7@gmail.com</p>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
-
 </html>
