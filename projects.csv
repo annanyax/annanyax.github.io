@@ -1,9 +1,9 @@
-Year,Title,Company,Technologies,Link
-2024,Cloud Kitched,__,Canva,https://bayleafbiryani.my.canva.site/
-2023,Web-resume,__,"HTML, CSS, JS",https://github.com/annanyax/web-resume
-2022,The Simon Game,__,"JS, HTML, CSS",https://github.com/annanyax/the-simon-game
-2020,First Personal Website,__,"HTML, CSS, JS",https://github.com/annanyax/annanyax.github.io
-2020,Simple Blog Site,__,"HTML, CSS, JS",https://www.annanyasah.com/blog.html
-2018,Smart Dustbin,TCET,"ML, Python",https://docs.google.com/document/d/1JrmWHxznNpPceWUBJlCdEDh8i6MRsJCxmI6cLCuJYGQ/edit?usp=sharing
-2016,Advanced Calculator,BVP,"C, Frontend",#
-2015,Smart Voting System,BVP,"Embedded Systems, C, Microprocessor",https://docs.google.com/document/d/1CJjjuhnXIRbPU98A-ATnXrIVpmClkwJP6S2CtAPdqVw/edit?usp=drive_link
+Title,Technologies,Year,Link
+Cloud Kitched,Canva,2024,https://bayleafbiryani.my.canva.site/
+Web-resume,"HTML, CSS, JS",2023,https://github.com/annanyax/web-resume
+The Simon Game,"JS, HTML, CSS",2022,https://github.com/annanyax/the-simon-game
+First Personal Website,"HTML, CSS, JS",2020,https://github.com/annanyax/annanyax.github.io
+Simple Blog Site,"HTML, CSS, JS",2020,https://www.annanyasah.com/blog.html
+Smart Dustbin,"ML, Python",2018,https://docs.google.com/document/d/1JrmWHxznNpPceWUBJlCdEDh8i6MRsJCxmI6cLCuJYGQ/edit?usp=sharing
+Advanced Calculator,"C, Frontend",2016,#
+Smart Voting System,"Embedded Systems, C, Microprocessor",2015,https://docs.google.com/document/d/1CJjjuhnXIRbPU98A-ATnXrIVpmClkwJP6S2CtAPdqVw/edit?usp=drive_link

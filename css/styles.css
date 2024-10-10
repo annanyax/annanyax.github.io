@@ -768,7 +768,7 @@ body, html {
 
 .archive-table-row {
     display: grid;
-    grid-template-columns: 1fr 3fr 2fr 2fr 1fr; /* Adjusted column sizes */
+    grid-template-columns: 3fr 4fr 1fr 0.5fr; /* Adjusted column sizes */
     padding: 20px 0;
     border-bottom: 1px solid #233554;
     align-items: center;
@@ -793,12 +793,66 @@ body, html {
     transition: all 0.3s ease;
 }
 
-
-/* Blog Section */
-/* Blog Section Table */
-.blog-table-row {
+/* .archive-table-row {
     display: grid;
-    grid-template-columns: 2fr 5fr 1fr; /* Adjust column sizes for blog */
+    grid-template-columns: 4fr 2fr 1fr 0.5fr;
+    padding: 20px 0;
+    border-bottom: 1px solid #233554;
+    align-items: center;
+} */
+
+/* .archive-table-header{
+    display: grid;
+    grid-template-columns: 4fr 2fr 1fr 0.5fr;
+    font-weight: bold;
+    color: #a889ff;
+    border-bottom: 1px solid #233554;
+    padding-bottom: 10px;
+} */
+
+/* .archive-table-row:hover {
+    background: #2a2a2a;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+} */
+
+
+/* Blog Section  */
+.blog-section {
+    padding: 100px 150px;
+    color: #F1F1F1;
+}
+
+.blog-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.blog-header h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: #F1F1F1;
+}
+
+.blog-header p {
+    font-size: 1.2em;
+    color: #ff8cff;
+}
+
+.blog-table {
+    width: 100%;
+}
+
+/* .blog-table-header {
+    font-weight: bold;
+    color: #a889ff;
+    border-bottom: 1px solid #233554;
+    padding-bottom: 10px;
+} */
+
+.blog-table-row{
+    display: grid;
+    grid-template-columns: 4fr 2fr 1fr 0.5fr; /* Adjusted column sizes */
     padding: 20px 0;
     border-bottom: 1px solid #233554;
     align-items: center;
@@ -806,7 +860,7 @@ body, html {
 
 .blog-table-header {
     display: grid;
-    grid-template-columns: 2fr 5fr 1fr; /* Make the header match the body columns */
+    grid-template-columns: 4fr 2fr 1fr 0.5fr; /* Match the header columns with body */
     font-weight: bold;
     color: #a889ff;
     border-bottom: 1px solid #233554;
@@ -828,7 +882,6 @@ body, html {
 }
 
 /* Hover effects for rows */
-.archive-table-row:hover, 
 .blog-table-row:hover {
     background: #2a2a2a;
     transform: translateY(-5px);

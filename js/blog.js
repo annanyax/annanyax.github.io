@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
             // Iterate over the data and create rows for each blog
             data.forEach(blog => {
                 const row = document.createElement("div");
-                row.classList.add("archive-table-row");
+                row.classList.add("blog-table-row");
 
-                row.innerHTML = `
-                    <div class="date">${blog.Date}</div>
+                row.innerHTML = `      
                     <div class="title">${blog.Title}</div>
-                    <div class="description">${blog.Description}</div>
+                    <div class="category">${blog.Category}</div>
+                    <div class="date">${blog.Date}</div>
                     <div class="links"><a href="${blog.Link}" target="_blank"><i class="fas fa-external-link-alt"></i></a></div>
                 `;
                 blogsList.appendChild(row);

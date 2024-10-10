@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 row.classList.add("archive-table-row");
 
                 row.innerHTML = `
-                    <div class="year">${project.Year}</div>
+                    
                     <div class="title">${project.Title}</div>
-                    <div class="company">${project.Company}</div>
                     <div class="technologies">${project.Technologies}</div>
+                    <div class="year">${project.Year}</div>
                     <div class="links"><a href="${project.Link}" target="_blank"><i class="fas fa-external-link-alt"></i></a></div>
                 `;
                 projectsList.appendChild(row);
