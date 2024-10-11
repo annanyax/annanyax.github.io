@@ -887,3 +887,196 @@ body, html {
     transform: translateY(-5px);
     transition: all 0.3s ease;
 }
+
+
+
+/* Tablet Version (768px to 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    /* General Adjustments */
+    body, html {
+        font-size: 0.9em; /* Adjust the font size for tablets */
+    }
+
+    .fixed-nav {
+        padding: 20px 10px 3px 10px; /* Reduce padding for nav */
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding: 0 50px; /* Reduce padding */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-name {
+        font-size: 2.5em; /* Reduce font size for hero name */
+    }
+
+    .hero-tagline {
+        font-size: 1.8em; /* Adjust tagline size */
+    }
+
+    /* About Section */
+    .about-section {
+        padding: 50px 50px; /* Adjust padding */
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 20px; /* Adjust gap */
+    }
+
+    /* Experience Section */
+    .experience-section {
+        padding: 50px 50px; /* Adjust padding */
+    }
+
+    .experience-content {
+        flex-direction: column;
+    }
+
+    .company-list {
+        flex-direction: row; /* Make tabs horizontal */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Projects Section */
+    .noteworthy-content {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust project card size */
+        gap: 20px; /* Adjust gap */
+    }
+
+    /* Chat Box */
+    .chat-container {
+        width: 300px; /* Adjust chat container width */
+        height: 450px;
+    }
+}
+
+
+
+
+/* Mobile Version (max-width: 767px) */
+@media screen and (max-width: 767px) {
+    /* General Adjustments */
+    body, html {
+        font-size: 0.8em; /* Further reduce font size for mobile */
+    }
+
+    .fixed-nav {
+        padding: 15px 10px; /* Reduce padding */
+    }
+
+    .nav-left img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .CV-button {
+        margin-right: 20px; /* Adjust margin for CV button */
+        padding: 5px 10px; /* Adjust button size */
+    }
+
+    /* Hero Section */
+    .hero-section {
+        flex-direction: column;
+        padding: 0 30px; /* Reduce padding */
+        text-align: center;
+    }
+
+    .hero-name {
+        font-size: 2em; /* Smaller font size for name */
+    }
+
+    .hero-tagline {
+        font-size: 1.5em;
+    }
+
+    .hero-description {
+        max-width: 100%; /* Full width description */
+    }
+
+    /* About Section */
+    .about-section {
+        padding: 30px 20px; /* Reduce padding for mobile */
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .about-photo img {
+        max-width: 100%; /* Ensure image scales properly */
+    }
+
+    /* Experience Section */
+    .experience-section {
+        padding: 30px 20px;
+    }
+
+    .experience-content {
+        flex-direction: column;
+    }
+
+    /* Projects Section */
+    .noteworthy-content {
+        grid-template-columns: 1fr; /* Single column for projects */
+        gap: 20px;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        padding: 30px 20px;
+    }
+
+    .contact-title {
+        font-size: 1.2em;
+    }
+
+    .contact-heading {
+        font-size: 2em;
+    }
+
+    /* Chat Box */
+    .chat-container {
+        width: 100%; /* Full width on mobile */
+        height: 400px;
+        right: 0; /* Stick to the right edge */
+    }
+
+    .chat-header {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .chat-content {
+        padding: 10px;
+    }
+
+    .chat-input-container {
+        padding: 10px;
+    }
+
+    #chat-input {
+        padding: 8px;
+    }
+
+    #send-message {
+        padding: 8px;
+    }
+
+    /* Social Icons */
+    .social-icons {
+        left: 10px;
+        bottom: 50px;
+    }
+
+    .fixed-email {
+        right: 10px;
+        bottom: 50px;
+        font-size: 0.8em;
+    }
+}
+
