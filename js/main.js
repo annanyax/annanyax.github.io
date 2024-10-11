@@ -1,14 +1,38 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Smooth scroll for nav links
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+// document.addEventListener("DOMContentLoaded", function () {
+//     // Smooth scroll for nav links
+//     document.querySelectorAll('nav a').forEach(anchor => {
+//         anchor.addEventListener('click', function(e) {
+//             e.preventDefault();
+//             const targetId = this.getAttribute("href").substring(1);
+//             document.getElementById(targetId).scrollIntoView({
+//                 behavior: "smooth"
+//             });
+//         });
+//     });
+
+
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        // Check if the link is a local anchor link (starts with #) and prevent scrolling on external links like PDF
+        const href = this.getAttribute("href");
+        if (href && href.startsWith("#")) {
             e.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            document.getElementById(targetId).scrollIntoView({
-                behavior: "smooth"
-            });
-        });
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                console.error(`Element with ID ${targetId} not found`);
+            }
+        } else {
+            // Allow default behavior for external links (like your CV PDF)
+            console.log("External link or PDF. Skipping smooth scroll behavior.");
+        }
     });
+});
+
 
     // Intersection Observer for Animating Cards
     const projectCards = document.querySelectorAll('.project-card');
@@ -133,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (index === messages.length - 1) {
                         appendOptions(); // Add options after response
                     }
-                }, 2000 * (index + 1));
+                }, 1800 * (index + 1));
             });
         }
     }
@@ -148,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (index === introductionMessages.length - 1) {
                         appendOptions(); // Add options after introduction
                     }
-                }, 2000 * (index + 1));
+                }, 1800 * (index + 1));
             });
         }
     });
@@ -181,4 +205,3 @@ document.addEventListener("DOMContentLoaded", function () {
             sendMessage();
         }
     });
-});
