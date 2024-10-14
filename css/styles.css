@@ -974,7 +974,7 @@ body, html {
 @media screen and (max-width: 767px) {
     /* General Adjustments */
     body, html {
-        font-size: 1.2em; /* Further reduce font size for mobile */
+        font-size: 1em; /* Further reduce font size for mobile */
     }
 
     .fixed-nav {
