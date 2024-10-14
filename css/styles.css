@@ -13,7 +13,7 @@ body, html {
 .fixed-nav {
     position: fixed;
     width: 100%;
-    padding: 30px 20px 3px 20px;
+    padding: 15px 10px; /* Reduce padding for mobile */
     background: rgba(26, 26, 26, 0.418); /* Dark background with opacity */
     display: flex;
     justify-content: space-between;
@@ -33,8 +33,9 @@ body, html {
     position: fixed;
     top: -100%;
     right: 20px;
-    width: 350px;
-    height: 500px;
+    width: 100%; /* Full width on mobile */
+    max-width: 350px;
+    height: 400px; /* Reduced height for mobile */
     background: linear-gradient(135deg, #2e2e2e, #1a1a1a);
     color: #E0E0E0;
     border-radius: 10px;
@@ -47,9 +48,9 @@ body, html {
 
 .chat-header {
     background: #ff8cff;
-    padding: 15px;
+    padding: 10px;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,10 +68,13 @@ body, html {
 }
 
 .chat-content {
-    padding: 15px;
+    padding: 10px;
     flex-grow: 1;
     overflow-y: auto;
     background: #1a1a1a;
+    max-height: 300px; /* Adjusted for mobile */
+    scrollbar-width: thin;
+    scrollbar-color: #ff8cff #1a1a1a;
 }
 
 .chat-input-container {
@@ -83,7 +87,7 @@ body, html {
 
 #chat-input {
     flex-grow: 1;
-    padding: 10px;
+    padding: 8px;
     background: #1a1a1a;
     border: 1px solid #ff8cff;
     color: #E0E0E0;
@@ -94,7 +98,7 @@ body, html {
     background: #ff8cff;
     border: none;
     color: #121212;
-    padding: 10px;
+    padding: 8px;
     margin-left: 5px;
     cursor: pointer;
     transition: background 0.3s;
@@ -356,10 +360,12 @@ body, html {
 /* Hero Section */
 .hero-section {
     display: flex;
-    align-items: center;
-    height: 100vh;
-    padding: 0 150px;
-    position: relative;
+    flex-direction: column; /* Stack the content vertically */
+    justify-content: center; /* Vertically center */
+    align-items: flex-start; /* Align content to the left */
+    height: 100vh; /* Make sure the section takes up the full viewport height */
+    padding: 0 20px; /* Reduce padding for mobile screens to match Brittany's layout */
+    text-align: left; /* Left-align the text */
 }
 
 .hero-content {
@@ -608,7 +614,7 @@ body, html {
 
 /* Noteworthy Projects Section */
 .noteworthy-section {
-    padding: 100px 150px;
+    padding: 10px 10px;
 }
 
 .noteworthy-title {
@@ -819,7 +825,7 @@ body, html {
 
 /* Blog Section  */
 .blog-section {
-    padding: 100px 150px;
+    padding: 10px 10px;
     color: #F1F1F1;
 }
 
@@ -840,7 +846,8 @@ body, html {
 }
 
 .blog-table {
-    width: 100%;
+    width: 95%; /* Take up more screen space */
+    margin: 0 auto; /* Center the table */
 }
 
 /* .blog-table-header {
@@ -851,16 +858,19 @@ body, html {
 } */
 
 .blog-table-row{
+
+    padding: 10px 5px; /* Less padding */
     display: grid;
-    grid-template-columns: 4fr 2fr 1fr 0.5fr; /* Adjusted column sizes */
-    padding: 20px 0;
+    grid-template-columns: 4fr 2fr 1fr 0.5fr; 
+    /* padding: 20px 0; */
     border-bottom: 1px solid #233554;
     align-items: center;
 }
 
 .blog-table-header {
     display: grid;
-    grid-template-columns: 4fr 2fr 1fr 0.5fr; /* Match the header columns with body */
+    grid-template-columns: 1fr 0.3fr; /* Title and Link only */
+    /* grid-template-columns: 4fr 2fr 1fr 0.5fr; */
     font-weight: bold;
     color: #a889ff;
     border-bottom: 1px solid #233554;
@@ -903,9 +913,15 @@ body, html {
 
     /* Hero Section */
     .hero-section {
-        padding: 0 50px; /* Reduce padding */
-        flex-direction: column;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 50px; /* Add padding on the sides for tablets */
+        text-align: left; /* Keep text left-aligned */
+    }
+
+    .hero-content {
+        max-width: 700px; /* Constrain the width of the content */
     }
 
     .hero-name {
@@ -954,14 +970,11 @@ body, html {
     }
 }
 
-
-
-
 /* Mobile Version (max-width: 767px) */
 @media screen and (max-width: 767px) {
     /* General Adjustments */
     body, html {
-        font-size: 0.8em; /* Further reduce font size for mobile */
+        font-size: 1.2em; /* Further reduce font size for mobile */
     }
 
     .fixed-nav {
@@ -972,7 +985,7 @@ body, html {
         width: 40px;
         height: 40px;
     }
-
+    
     .CV-button {
         margin-right: 20px; /* Adjust margin for CV button */
         padding: 5px 10px; /* Adjust button size */
@@ -980,33 +993,61 @@ body, html {
 
     /* Hero Section */
     .hero-section {
-        flex-direction: column;
-        padding: 0 30px; /* Reduce padding */
-        text-align: center;
+        display: flex;
+        flex-direction: column; /* Stack the content vertically */
+        justify-content: center; /* Vertically center */
+        align-items: flex-start; /* Align content to the left */
+        height: 100vh; /* Make sure the section takes up the full viewport height */
+        padding: 0 15px; /* Reduce padding for mobile screens */
+        text-align: left; /* Left-align the text */
     }
-
+    
+    .hero-content {
+        max-width: 100%;
+    }
+    
     .hero-name {
-        font-size: 2em; /* Smaller font size for name */
+        font-size: 2em; /* Smaller font size for mobile */
     }
-
+    
     .hero-tagline {
         font-size: 1.5em;
     }
-
+    
     .hero-description {
-        max-width: 100%; /* Full width description */
+        max-width: 100%;
+        font-size: 1em;
+        line-height: 1.5;
+        color: #b0a8c9;
     }
+    
+    .hero-cta-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        color: #121212;
+        background: #ff8cff; /* Button Background Color */
+        border: none;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.3s;
+    }
+    
+    .hero-cta-button:hover {
+        background: #a889ff; /* Hover Background */
+        color: #FFFFFF;
+    }
+    
 
     /* About Section */
     .about-section {
         padding: 30px 20px; /* Reduce padding for mobile */
     }
-
+    
     .about-content {
         flex-direction: column;
         gap: 15px;
     }
-
+    
     .about-photo img {
         max-width: 100%; /* Ensure image scales properly */
     }
@@ -1015,9 +1056,36 @@ body, html {
     .experience-section {
         padding: 30px 20px;
     }
-
+    
     .experience-content {
         flex-direction: column;
+    }
+    
+    .company-slider {
+        display: flex;
+        justify-content: flex-start; /* Left align on small screens */
+        gap: 5px;
+        overflow-x: auto; /* Horizontal scroll for smaller screens */
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ff8cff; /* Line under the slider */
+    }
+    
+    .company-tab {
+        background: none;
+        border: none;
+        color: #a889ff; /* Color for the text */
+        text-align: left;
+        font-size: 0.9em;
+        cursor: pointer;
+        padding: 10px;
+        white-space: nowrap; /* Prevent breaking into new line */
+        transition: color 0.3s, border-bottom 0.3s; /* Smooth transitions */
+    }
+    
+    .company-tab.active {
+        color: #ff8cff; /* Active tab color */
+        border-bottom: 2px solid #ff8cff; /* Active state underline */
     }
 
     /* Projects Section */
@@ -1025,19 +1093,72 @@ body, html {
         grid-template-columns: 1fr; /* Single column for projects */
         gap: 20px;
     }
+    
+    .project-card {
+        width: 100%; /* Full width of the screen */
+        max-width: 320px; /* Limit the width for a square-like shape */
+        height: 320px; /* Make height equal to width for a square look */
+        margin: 20px auto; /* Center the cards and add spacing between them */
+        padding: 25px;
+        border-radius: 5px;
+        box-shadow: 0 10px 30px -15px rgba(42, 42, 42, 0.7);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-10px);
+    }
+    
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .project-header i {
+        color: #ff8cff;
+        font-size: 1.8em; /* Adjust size of folder icon */
+    }
+    
+    .project-links a {
+        margin-left: 15px;
+        color: #F1F1F1;
+        font-size: 1.2em; /* Adjust size of external link and GitHub icon */
+        transition: color 0.3s;
+    }
 
     /* Contact Section */
     .contact-section {
-        padding: 30px 20px;
+        padding: 80px 20px;
+        text-align: center;
     }
-
+    
     .contact-title {
         font-size: 1.2em;
     }
-
+    
     .contact-heading {
         font-size: 2em;
+        font-weight: bold;
+        color: #F1F1F1;
+        margin-bottom: 20px;
     }
+    
+    .contact-cta-button {
+        color: #121212;
+        background: #ff8cff;
+        border: 1px solid #ff8cff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background 0.3s, color 0.3s;
+    }
+    
+    .contact-cta-button:hover {
+        background: #a889ff;
+        color: #FFFFFF;
+    }
+    
 
     /* Chat Box */
     .chat-container {
@@ -1068,10 +1189,10 @@ body, html {
     }
 
     /* Social Icons */
-    .social-icons {
-        left: 10px;
-        bottom: 50px;
-    }
+    .social-icons,
+.fixed-email {
+    display: none; /* Hide on mobile */
+}
 
     .fixed-email {
         right: 10px;
@@ -1079,4 +1200,325 @@ body, html {
         font-size: 0.8em;
     }
 }
+
+
+/* Mobile and Tablet Adjustments */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    /* Hero Section - Center Vertically and Left Align for Tablet */
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100vh;
+        padding: 0 20px;
+        text-align: left;
+    }
+
+    /* Font Size Adjustments for Tablet */
+    .hero-intro {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+
+    .hero-name {
+        font-size: 2.5em;
+        margin: 0 0 10px;
+    }
+
+    .hero-tagline {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .hero-description {
+        font-size: 1em;
+        line-height: 1.5;
+        max-width: 400px;
+    }
+
+    /* Center the CTA Button for Tablet */
+    .hero-cta-button {
+        margin: 20px auto 0;
+        padding: 10px 25px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* Hero Section Adjustments for Mobile */
+    .hero-section {
+        padding: 0 15px;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+        height: 100vh;
+    }
+
+    /* Adjusted Font Sizes for Mobile */
+    .hero-intro {
+        font-size: 0.9em; /* Smaller intro text */
+        margin-bottom: 10px;
+    }
+
+    .hero-name {
+        font-size: 2em; /* Smaller font size for mobile */
+    }
+
+    .hero-tagline {
+        font-size: 1.5em;
+    }
+
+    .hero-description {
+        max-width: 100%;
+        font-size: 1em;
+        line-height: 1.5;
+    }
+
+    /* Center the CTA Button for Mobile */
+    .hero-cta-button {
+        margin: 20px auto 0;
+        padding: 10px 20px;
+    }
+}
+
+
+/* Company Slider Styling */
+.company-slider {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Spacing between buttons */
+    overflow-x: auto; /* Horizontal scroll for smaller screens */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ff8cff; /* Line under the slider */
+}
+
+.company-tab {
+    background: none;
+    border: none;
+    color: #a889ff; /* Color for the text */
+    text-align: left;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 10px;
+    white-space: nowrap; /* Prevent breaking into new line */
+    transition: color 0.3s, border-bottom 0.3s; /* Smooth transitions */
+}
+
+.company-tab.active {
+    color: #ff8cff; /* Active tab color */
+    border-bottom: 2px solid #ff8cff; /* Active state underline */
+}
+
+/* Job details container (hidden except active one) */
+.job-detail {
+    display: none; /* Hide by default */
+}
+
+.job-detail.active {
+    display: block; /* Show active job detail */
+}
+
+/* Make sure the buttons are responsive */
+@media screen and (max-width: 767px) {
+    .company-slider {
+        justify-content: flex-start; /* Left align on small screens */
+        gap: 5px;
+    }
+    
+    .company-tab {
+        font-size: 0.9em;
+    }
+}
+
+/* Mobile Version (max-width: 767px) */
+@media screen and (max-width: 767px) {
+    .project-card {
+        width: 100%; /* Full width of the screen */
+        max-width: 320px; /* Limit the width for a square-like shape */
+        height: 320px; /* Make height equal to width for a square look */
+        margin: 20px auto; /* Center the cards and add spacing between them */
+    }
+
+    /* Adjusting the content inside to align better */
+    .project-card h4 {
+        font-size: 1.2em; /* Slightly smaller title */
+        margin-bottom: 10px;
+    }
+
+    .project-card p {
+        font-size: 0.9em; /* Adjust font size inside cards */
+        line-height: 1.4; /* Better readability */
+    }
+
+    .project-card .project-technologies {
+        font-size: 0.8em; /* Slightly smaller technologies text */
+    }
+
+    /* Optional: Adjust icons inside the cards */
+    .project-header i {
+        font-size: 1.8em; /* Adjust size of folder icon */
+    }
+
+    .project-links a {
+        font-size: 1.2em; /* Adjust size of external link and GitHub icon */
+    }
+}
+
+/* Mobile Version (max-width: 767px) */
+@media screen and (max-width: 767px) {
+    .view-archive a {
+        display: inline-block;
+        font-size: 1em; /* Adjust font size */
+        padding: 10px 20px; /* Set proper padding for better size */
+        text-align: center;
+        margin: 20px auto; /* Center the button horizontally */
+        width: auto; /* Allow the width to adjust based on content */
+        border-radius: 5px; /* Ensure the button has smooth edges */
+        border: 2px solid #ff8cff; /* Ensure border is properly visible */
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .social-icons, /* Class for the social icons */
+    .fixed-email { /* Class for the email on the right */
+        display: none; /* Hide both on mobile */
+    }
+}
+
+
+@media screen and (min-width: 1025px) {
+    .hero-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 100px; /* Add more padding for laptops */
+        text-align: left;
+    }
+
+    .hero-content {
+        max-width: 900px; /* Adjust width of the content area */
+    }
+
+    .hero-text {
+        max-width: 600px; /* Limit the width of the text */
+    }
+
+    .hero-cta-button {
+        margin-top: 20px; /* Ensure button has proper spacing */
+    }
+}
+
+/* Mobile Version (max-width: 767px) */
+@media screen and (max-width: 767px) {
+    /* Hide the Category and Date columns */
+    .blog-category,
+    .blog-date {
+        display: none;
+    }
+
+    /* Adjust the grid-template-columns to display only Title and Link */
+    .blog-table-row,
+    .blog-table-header {
+        grid-template-columns: 1fr 0.3fr; /* Title and Link */
+    }
+
+    /* Reduce padding and make the blog table more centered */
+    .blog-section {
+        padding: 20px 10px; /* Reduce padding on the sides */
+    }
+
+    .blog-table {
+        width: 95%; /* Take up more screen space */
+        margin: 0 auto; /* Center the table */
+    }
+
+    /* Adjust the row padding for smaller screens */
+    .blog-table-row {
+        padding: 10px 5px; /* Less padding */
+    }
+
+    /* Adjust the blog title style for mobile readability */
+    .blog-title {
+        font-size: 1.1rem;
+        color: #ff8cff; /* Accent color for the title */
+    }
+
+    /* Center the link */
+    .links a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Ensure the email section stays readable on mobile */
+    .fixed-email {
+        font-size: 0.8rem;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    /* Optionally, hide social icons for mobile */
+    .social-icons {
+        display: none;
+    }
+}
+
+/* Mobile Version (max-width: 767px) */
+@media screen and (max-width: 767px) {
+    /* Hide the "Built with" and "Year" columns */
+    .technologies,
+    .year {
+        display: none;
+    }
+
+    /* Adjust the grid-template-columns to display only Title and Link */
+    .archive-table-row,
+    .archive-table-header {
+        grid-template-columns: 1fr 0.3fr; /* Title and Link */
+    }
+
+    /* Reduce padding and make the archive table more centered */
+    .archive-section {
+        padding: 10px 10px; /* Reduce padding on the sides */
+    }
+
+    .archive-table {
+        width: 95%; /* Take up more screen space */
+        margin: 0 auto; /* Center the table */
+    }
+
+    /* Adjust the row padding for smaller screens */
+    .archive-table-row {
+        padding: 10px 5px; /* Less padding */
+    }
+
+    /* Adjust the title style for mobile readability */
+    .title {
+        font-size: 1.1rem;
+        color: #ff8cff; /* Accent color for the title */
+    }
+
+    /* Center the link */
+    .links a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Ensure the email section stays readable on mobile */
+    .fixed-email {
+        font-size: 0.8rem;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    /* Optionally, hide social icons for mobile */
+    .social-icons {
+        display: none;
+    }
+}
+
+
+
 

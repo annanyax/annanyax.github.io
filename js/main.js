@@ -34,36 +34,26 @@ document.querySelectorAll('nav a').forEach(anchor => {
 });
 
 
-    // Intersection Observer for Animating Cards
-    const projectCards = document.querySelectorAll('.project-card');
-    const contactSection = document.querySelector('.contact-section');
+    // JavaScript for switching between company tabs
+const companyTabs = document.querySelectorAll('.company-tab');
+const jobDetails = document.querySelectorAll('.job-detail');
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-            }
-        });
-    }, { threshold: 0.5 });
+companyTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        companyTabs.forEach(t => t.classList.remove('active'));
+        
+        // Add active class to the clicked tab
+        this.classList.add('active');
 
-    projectCards.forEach(card => observer.observe(card));
-    observer.observe(contactSection);
+        // Hide all job details
+        jobDetails.forEach(detail => detail.classList.remove('active'));
 
-    // Tab switching for experience section
-    const companyTabs = document.querySelectorAll('.company-tab');
-    const jobDetails = document.querySelectorAll('.job-detail');
-
-    companyTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            companyTabs.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-
-            const selectedCompany = this.getAttribute('data-company');
-            jobDetails.forEach(detail => {
-                detail.style.display = detail.getAttribute('data-company') === selectedCompany ? 'block' : 'none';
-            });
-        });
+        // Show the job details that match the clicked tab
+        const selectedCompany = this.getAttribute('data-company');
+        document.querySelector(`.job-detail[data-company="${selectedCompany}"]`).classList.add('active');
     });
+});
 
     // Chat Functionality
     const navIcon = document.querySelector('.nav-left img');
@@ -205,3 +195,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
             sendMessage();
         }
     });
+
+
+
+    
