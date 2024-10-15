@@ -494,8 +494,9 @@ body, html {
     text-align: left;
     font-size: 1em;
     cursor: pointer;
-    transition: color 0.3s;
     padding: 10px;
+    height: 40px;
+    transition: color 0.3s ease;
 }
 
 .company-tab:hover,
@@ -614,7 +615,7 @@ body, html {
 
 /* Noteworthy Projects Section */
 .noteworthy-section {
-    padding: 10px 10px;
+    padding: 100px 150px;
 }
 
 .noteworthy-title {
@@ -846,7 +847,7 @@ body, html {
 }
 
 .blog-table {
-    width: 95%; /* Take up more screen space */
+    width: 75%; /* Take up more screen space */
     margin: 0 auto; /* Center the table */
 }
 
@@ -968,6 +969,29 @@ body, html {
         width: 300px; /* Adjust chat container width */
         height: 450px;
     }
+
+    .company-slider {
+        display: grid;
+        grid-template-columns: 1fr; /* Stack buttons vertically */
+        gap: 20px;
+        border-bottom: none; /* Remove bottom border for vertical */
+        height: auto; /* Adjust height to fit content */
+        justify-items: start;
+        padding-bottom: 0px;
+        padding-right: 20px;
+    }
+
+    .company-tab {
+        display: block;
+        text-align: left;
+        width: 100%; /* Make sure buttons take full width */
+        padding: 10px 15px;
+        border-left: 2px solid transparent;
+    }
+
+    .company-tab.active {
+        border-left: 2px solid #ff8cff; /* Active tab has left border */
+    }
 }
 
 /* Mobile Version (max-width: 767px) */
@@ -1062,13 +1086,18 @@ body, html {
     }
     
     .company-slider {
-        display: flex;
+        display: grid; /* Grid layout for buttons */
         justify-content: flex-start; /* Left align on small screens */
         gap: 5px;
         overflow-x: auto; /* Horizontal scroll for smaller screens */
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-        border-bottom: 1px solid #ff8cff; /* Line under the slider */
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        /* border-bottom: 1px solid #ff8cff; */
+        scrollbar-width: none;
+    }
+
+    .company-slider::-webkit-scrollbar {
+        display: none; /* For Chrome, Safari, and Opera */
     }
     
     .company-tab {
@@ -1089,6 +1118,10 @@ body, html {
     }
 
     /* Projects Section */
+    .noteworthy-section {
+        padding: 10px 10px;
+    }
+    
     .noteworthy-content {
         grid-template-columns: 1fr; /* Single column for projects */
         gap: 20px;
@@ -1282,15 +1315,16 @@ body, html {
 }
 
 
-/* Company Slider Styling */
+/* Company Slider Styling Mobile */
 .company-slider {
     display: flex;
     justify-content: space-between;
     gap: 10px; /* Spacing between buttons */
     overflow-x: auto; /* Horizontal scroll for smaller screens */
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ff8cff; /* Line under the slider */
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    /* border-bottom: 1px solid #ff8cff; */
+    scrollbar-width: none; /* Hide scrollbar */
 }
 
 .company-tab {
@@ -1391,8 +1425,8 @@ body, html {
     .hero-section {
         display: flex;
         justify-content: center;
-        align-items: center;
-        padding: 0 100px; /* Add more padding for laptops */
+        align-items: flex-start;
+        padding: 10px 150px; /* Add more padding for laptops */
         text-align: left;
     }
 

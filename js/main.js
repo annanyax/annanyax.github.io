@@ -38,22 +38,42 @@ document.querySelectorAll('nav a').forEach(anchor => {
 const companyTabs = document.querySelectorAll('.company-tab');
 const jobDetails = document.querySelectorAll('.job-detail');
 
+// Function to set default active tab and content on page load
+function setDefaultActiveTab() {
+    // Set the first tab as active by default
+    const firstTab = companyTabs[0];
+    const firstDetail = jobDetails[0];
+
+    firstTab.classList.add('active'); // Add active class to the first tab
+    firstDetail.classList.add('active'); // Show the content for the first tab
+}
+
+// Set default active tab when the page loads
+window.addEventListener('DOMContentLoaded', (event) => {
+    setDefaultActiveTab();
+});
+
+// Event listener to switch between tabs when clicked
 companyTabs.forEach(tab => {
     tab.addEventListener('click', function() {
-        // Remove active class from all tabs
+        // Remove active class from all tabs and hide all job details
         companyTabs.forEach(t => t.classList.remove('active'));
-        
+        jobDetails.forEach(detail => detail.classList.remove('active'));
+
         // Add active class to the clicked tab
         this.classList.add('active');
 
-        // Hide all job details
-        jobDetails.forEach(detail => detail.classList.remove('active'));
-
         // Show the job details that match the clicked tab
         const selectedCompany = this.getAttribute('data-company');
-        document.querySelector(`.job-detail[data-company="${selectedCompany}"]`).classList.add('active');
+        const targetDetail = document.querySelector(`.job-detail[data-company="${selectedCompany}"]`);
+        if (targetDetail) {
+            targetDetail.classList.add('active');
+        } else {
+            console.error(`Job details for ${selectedCompany} not found`);
+        }
     });
 });
+
 
     // Chat Functionality
     const navIcon = document.querySelector('.nav-left img');
