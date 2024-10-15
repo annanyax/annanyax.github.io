@@ -26,6 +26,7 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 5px 5px;
 }
 
 /* Chat Container Styles */
@@ -332,6 +333,8 @@ body, html {
 .social-icons ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column; /* Vertical by default for desktop/laptop */
 }
 
 .social-icons ul li {
@@ -1121,7 +1124,7 @@ body, html {
     .noteworthy-section {
         padding: 10px 10px;
     }
-    
+
     .noteworthy-content {
         grid-template-columns: 1fr; /* Single column for projects */
         gap: 20px;
@@ -1222,10 +1225,15 @@ body, html {
     }
 
     /* Social Icons */
-    .social-icons,
+    /* .social-icons,
 .fixed-email {
-    display: none; /* Hide on mobile */
-}
+    display: none;
+} */
+
+  /* Social Icons */
+  .fixed-email {
+      display: none; /* Hide on mobile */
+  }
 
     .fixed-email {
         right: 10px;
@@ -1413,12 +1421,12 @@ body, html {
     }
 }
 
-@media screen and (max-width: 767px) {
-    .social-icons, /* Class for the social icons */
-    .fixed-email { /* Class for the email on the right */
-        display: none; /* Hide both on mobile */
+/* @media screen and (max-width: 767px) {
+    .social-icons,
+    .fixed-email {
+        display: none;
     }
-}
+} */
 
 
 @media screen and (min-width: 1025px) {
@@ -1493,9 +1501,9 @@ body, html {
     }
 
     /* Optionally, hide social icons for mobile */
-    .social-icons {
+    /* .social-icons {
         display: none;
-    }
+    } */
 }
 
 /* Mobile Version (max-width: 767px) */
@@ -1548,10 +1556,85 @@ body, html {
     }
 
     /* Optionally, hide social icons for mobile */
-    .social-icons {
+    /* .social-icons {
         display: none;
+    } */
+}
+
+/* For mobile only (max-width: 767px) - horizontal layout */
+@media screen and (max-width: 767px) {
+    .social-icons {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin: 20px auto; /* Center below the button */
+        text-align: center; /* Center the whole container */
+    }
+
+    .social-icons ul {
+        display: flex;
+        flex-direction: row; /* Change to horizontal for mobile */
+        justify-content: center; /* Center the icons horizontally */
+    }
+
+    .social-icons ul li {
+        margin: 0 10px; /* Add spacing between the icons */
+    }
+
+    .social-icons ul li a {
+        font-size: 1.8em; /* Adjust size if needed */
     }
 }
+
+
+
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Ensure it's on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+  }
+  
+  /* Modal Content Box */
+  .modal-content {
+    background-color: #2e2e2e;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #ff8cff;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+    color: #f1f1f1;
+    font-family: 'Fira Code', monospace;
+  }
+  
+  .modal h2 {
+    color: #ff8cff;
+  }
+  
+  /* Close Button */
+  .close-btn {
+    color: #f1f1f1;
+    float: right;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .close-btn:hover,
+  .close-btn:focus {
+    color: #ff8cff; /* Change color when hovered */
+    text-decoration: none;
+  }
+  
 
 
 

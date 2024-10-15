@@ -102,7 +102,7 @@ companyTabs.forEach(tab => {
         3: [
             { sender: 'user', message: "Make me a website!" },
             { sender: 'bot', message: "Hey, Thanks for reaching out" },
-            { sender: 'bot', message: "Unfortunately, my plate is full until June 2023" },
+            { sender: 'bot', message: "Unfortunately, my plate is full until November 2024" },
             { sender: 'bot', message: "Thanks for understanding" },
             { sender: 'bot', message: "Can I help you with anything else?" }
         ],
@@ -215,6 +215,29 @@ companyTabs.forEach(tab => {
             sendMessage();
         }
     });
+
+
+    // Show the modal when the page loads
+window.onload = function() {
+    var modal = document.getElementById("popup-modal");
+    var closeBtn = document.getElementsByClassName("close-btn")[0];
+
+    // Show the modal
+    modal.style.display = "block";
+
+    // Close the modal when the close button is clicked
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Close the modal when clicking anywhere outside the modal content
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+};
+
 
 
 

@@ -1,0 +1,232 @@
+/* General Blog Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
+    background: linear-gradient(135deg, #2e2e2e, #1a1a1a);
+    color: #E0E0E0;
+}
+
+/* Navigation - Same as before */
+.fixed-nav {
+    position: fixed;
+    width: 100%;
+    padding: 15px 10px;
+    background: rgba(26, 26, 26, 0.418);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.nav-container {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-icon-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.CV-button {
+    border: 1px solid #ff8cff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    text-decoration: none;
+    color: #ff8cff;
+}
+
+.CV-button:hover {
+    background: rgba(255, 140, 255, 0.1);
+}
+
+/* Blog Header (Title Section) */
+.blog-header {
+    padding: 100px 150px 0px; /* Adjusted for spacing from top */
+    text-align: center;
+}
+
+.blog-title {
+    font-size: 3em;
+    color: #ff8cff; /* Title color matching the theme */
+}
+
+/* Blog Content Section */
+.blog-content {
+    padding: 20px 40px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.blog-content p {
+    margin: 20px 0;
+}
+
+.blog-image {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 5px;
+    margin: 20px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Blog Footer Section */
+.blog-footer {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Social Icons (Horizontal for Mobile) */
+/* Social Icons Styles */
+.social-icons ul {
+    list-style: none; /* Remove list markers */
+    padding: 0;
+    display: flex; /* Align items horizontally */
+    justify-content: center; /* Center the icons */
+    gap: 20px; /* Add space between icons */
+}
+
+.social-icons ul li {
+    margin: 0;
+}
+
+.social-icons ul li a {
+    font-size: 1.5em; /* Adjust icon size */
+    color: #a889ff; /* Adjust icon color */
+    transition: color 0.3s;
+}
+
+.social-icons ul li a:hover {
+    color: #ff8cff; /* Hover effect color */
+}
+
+.fixed-email {
+    margin-top: 30px;
+    color: #a889ff;
+    font-size: 1em;
+}
+
+.blog-image {
+    width: 100%;
+    max-width: 800px; /* Maximum width */
+    max-height: 500px; /* Optional max height to keep aspect ratio */
+    object-fit: contain; /* Ensures the image retains its aspect ratio */
+    border-radius: 5px;
+    margin: 20px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Optional hover effect for clickable images */
+.blog-image:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+/* Basic Link Styling */
+a {
+    color: #a889ff; /* Adjust the color to match your theme (light purple) */
+    text-decoration: none; /* Remove the default underline */
+    font-weight: bold; /* Make the link text bold */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    position: relative; /* For hover effects with pseudo-elements */
+}
+
+/* Hover Effect */
+a:hover {
+    color: #ff8cff; /* Change color on hover to a more vibrant shade (pink) */
+}
+
+/* Underline Animation on Hover */
+a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Positioning the underline just below the text */
+    width: 0;
+    height: 2px;
+    background-color: #ff8cff; /* Use a vibrant pink for the underline */
+    transition: width 0.3s ease-in-out; /* Smooth underline animation */
+}
+
+a:hover::after {
+    width: 100%; /* Expand underline width on hover */
+}
+
+/* Focus and Active States */
+a:focus, a:active {
+    color: #ff8cff; /* Retain the hover color when focused or clicked */
+    outline: none; /* Remove the default focus outline */
+    text-decoration: underline; /* Optional: underline for accessibility */
+}
+
+/* Links Inside Buttons (if you have buttons with links) */
+/* a.button-link {
+    color: #121212;
+    background-color: #ff8cff; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background 0.3s ease-in-out;
+} */
+
+/* a.button-link:hover {
+    background-color: #a889ff;
+    color: #fff;
+} */
+
+/* Optional Additional Style for External Links (icon) */
+/* a[target="_blank"]::after {
+    content: '\f08e';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 8px;
+    font-size: 0.9em;
+} */
+
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+
+    .fixed-nav {
+        padding: 15px 10px;
+    }
+
+    .blog-header {
+        padding: 100px 10px 0px; /* Adjusted for spacing from top */
+        text-align: center;
+    }
+
+    .blog-title {
+        font-size: 2.5em;
+    }
+
+    .blog-content {
+        padding: 20px;
+    }
+
+    .blog-image {
+        width: 100%;
+    }
+
+    .fixed-email {
+        font-size: 0.9em;
+    }
+
+    .blog-image {
+        max-width: 85%; /* Make sure the image fits the mobile screen */
+        height: auto; /* Let the height adjust automatically to preserve aspect ratio */
+        max-height: none; /* Remove max height for mobile to avoid cropping */
+    }
+}

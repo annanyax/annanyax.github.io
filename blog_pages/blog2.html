@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Title - Annanya Sah</title>
+    <link rel="stylesheet" href="../css/blog_styles.css"> <!-- New CSS for blog -->
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/anime-favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+
+    <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="96x96" href="images/anime-favicon.png">
+</head>
+<body>
+
+    <!-- Navigation (same as the index.html) -->
+    <header class="fixed-nav">
+        <nav class="nav-container">
+            <!-- Left icon -->
+            <div class="nav-left">
+                <a href="../index.html"><img src="../images/anime-icon-zoomed.png" alt="Your Icon" class="nav-icon-image"></a>
+            </div>
+    
+            <!-- CV button on the right -->
+            <div class="nav-right">
+                <a href="../CV/SAH_Annanya_EN_IT.pdf" class="CV-button" target="_blank">Curriculum Vitae</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Blog Title Section -->
+    <section class="blog-header">
+        <h1 class="blog-title">Ever Tried Teaching a Chatbot How to Chat?</h1>
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="blog-content">
+
+        <p>So, ever thought about teaching a chatbot how to chat? Let me tell you, I have, and it's been quite the adventure. I built mine in Python (because why not give my brain a workout), and this little bot is designed to learn from user interactions by storing answers in a KnowledgeBase. Sounds smart, right? Well… sort of.</p>
+
+    <h2>The Early Challenges</h2>
+    
+    <p>Here’s the fun part: ask it something like, <em>“How are you?”</em> and it confidently replies, <em>“I am good.”</em> Success! But throw in a casual <em>“How’s you?”</em> and it’s like, <em>“Wait, what language is that?”</em> Completely clueless. 😂 Turns out, my chatbot is very literal—it handles specific input just fine, but swap out a word or two, and it’s lost at sea.</p>
+
+    <p><strong>So, why does this happen?</strong> Well, chatbots rely heavily on pattern recognition and data training. At the core, the bot breaks down the user’s input into patterns it’s been trained to understand. But here’s the kicker: training a chatbot to handle every possible variation of human language isn’t a quick fix—it’s a data-hungry process. Every word, every phrasing, and every slang term needs to be mapped out with enough examples for the bot to recognize them.</p>
+
+    <h2>Basic Techniques and Their Limitations</h2>
+
+    <p>In the early stages, I’ve been using basic techniques like keyword matching and predefined responses. It’s a good start, but as I’ve learned (the hard way), this only gets you so far when humans are, well, unpredictable. People say <em>“Hey, how you doin'?”</em> instead of <em>“Hello, how are you?”</em> and the bot acts like it's never seen a greeting before. Training it to understand these variations takes way more data and time than you'd expect.</p>
+
+    <h2>What's Next: Diving Into NLP</h2>
+
+    <p>But here’s where things get interesting. To take this chatbot to the next level, I’ll be diving into more advanced NLP (Natural Language Processing) techniques, like intent recognition and entity extraction. These techniques allow the chatbot to understand not just the words, but the meaning and intent behind them. I’m planning to integrate machine learning models to handle context, so the bot can handle a wider range of conversations, and maybe—just maybe—stop freaking out when someone says, <em>“How’s you?”</em> instead of <em>“How are you?”</em></p>
+
+    <p>Another step is using training data that incorporates sentence structure, grammar variations, and, of course, slang. I’ll also be looking at implementing neural network-based models like transformers, which are a game changer for bots because they help in understanding context and predicting more fluid, natural responses. This way, the bot won’t just memorize responses but will actually learn how to respond more intelligently over time.</p>
+
+    <h2>The Hilarious Reality of Chatbot Development</h2>
+
+    <p>But until I get to that sophisticated stage, we’re still in the <em>“oops, didn’t quite get that”</em> phase. Don’t get me wrong, it’s still hilarious watching it completely miss the mark. The reality of chatbot development is full of those moments where you realize just how nuanced human communication is.</p>
+
+    <p>Want to laugh (and maybe cringe) along with me? You can check out my code on <a href="https://github.com/annanyax/chat-bot.git">GitHub<i class="fas fa-robot"></i></a> and see this work-in-progress in action. And stay tuned—once I’ve implemented these new techniques, we’ll see if my bot can finally handle the tricky art of small talk.</p>
+
+    <p>For now, I’m off to train it on the difference between <em>“How’s it going?”</em> and <em>“What’s up?”</em> One chatbot breakthrough at a time! 😅</p>
+
+    </section>
+
+    <!-- Social Icons & Email at the End -->
+    <section class="blog-footer">
+        <div class="social-icons">
+            <ul>
+                <li><a href="https://github.com/annanyax"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://hashnode.com/@annanyasah"><i class="fa-solid fa-hashtag"></i></a></li>
+                <li><a href="https://twitter.com/annanyasah_"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="www.linkedin.com/in/annanyasah"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+        <div class="fixed-email">
+            <p>email@annanyasah.com</p>
+        </div>
+    </section>
+
+</body>
+</html>
